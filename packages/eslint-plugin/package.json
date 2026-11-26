@@ -1,0 +1,61 @@
+{
+  "name": "eslint-plugin-sitecore-pagebuilder",
+  "version": "0.1.0",
+  "description": "ESLint rules that catch Sitecore Content SDK code which hides empty fields and components from authors in Page Builder.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@types/estree": "^1.0.6",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.15.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "sitecore",
+    "content-sdk",
+    "page-builder",
+    "sitecoreai",
+    "xm-cloud"
+  ],
+  "author": "Krushna Patel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krushna285/sitecore-pagebuilder-kit.git",
+    "directory": "packages/eslint-plugin"
+  },
+  "homepage": "https://github.com/Krushna285/sitecore-pagebuilder-kit/tree/main/packages/eslint-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/Krushna285/sitecore-pagebuilder-kit/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

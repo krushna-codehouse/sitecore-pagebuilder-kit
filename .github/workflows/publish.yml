@@ -1,0 +1,27 @@
+name: Publish
+
+# Create a GitHub release (e.g. tag v0.1.0) to publish both packages to npm.
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write # needed for npm provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npm publish --workspaces --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
