@@ -8,7 +8,7 @@ const rules = {
 };
 
 const plugin = {
-  meta: { name: 'eslint-plugin-sitecore-pagebuilder', version: '0.1.0' },
+  meta: { name: 'eslint-plugin-sitecore-pagebuilder', version: '0.1.1' },
   rules,
   configs: {} as Record<string, Linter.Config>,
 } satisfies ESLint.Plugin;

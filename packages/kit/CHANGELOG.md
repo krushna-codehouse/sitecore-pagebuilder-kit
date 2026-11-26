@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Full README: what the package solves, a quick start, every prop and option, recipes, styling, testing and an FAQ.
+- Build now works on Windows (replaced `rm -rf` with a Node one-liner).
+
 ## 0.1.0
 
 First release.
